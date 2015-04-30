@@ -34,8 +34,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.RB_1 = new System.Windows.Forms.RadioButton();
             this.Cas = new System.Windows.Forms.GroupBox();
-            this.RB_2 = new System.Windows.Forms.RadioButton();
             this.RB_3 = new System.Windows.Forms.RadioButton();
+            this.RB_2 = new System.Windows.Forms.RadioButton();
             this.BTN_Calculer = new System.Windows.Forms.Button();
             this.TB_a = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -107,17 +107,6 @@
             this.Cas.TabStop = false;
             this.Cas.Text = "Cas";
             // 
-            // RB_2
-            // 
-            this.RB_2.AutoSize = true;
-            this.RB_2.Location = new System.Drawing.Point(18, 42);
-            this.RB_2.Name = "RB_2";
-            this.RB_2.Size = new System.Drawing.Size(63, 17);
-            this.RB_2.TabIndex = 5;
-            this.RB_2.Text = "P(X < a)";
-            this.RB_2.UseVisualStyleBackColor = true;
-            this.RB_2.CheckedChanged += new System.EventHandler(this.RB_2_CheckedChanged);
-            // 
             // RB_3
             // 
             this.RB_3.AutoSize = true;
@@ -128,6 +117,17 @@
             this.RB_3.Text = "P(X > a)";
             this.RB_3.UseVisualStyleBackColor = true;
             this.RB_3.CheckedChanged += new System.EventHandler(this.RB_3_CheckedChanged);
+            // 
+            // RB_2
+            // 
+            this.RB_2.AutoSize = true;
+            this.RB_2.Location = new System.Drawing.Point(18, 42);
+            this.RB_2.Name = "RB_2";
+            this.RB_2.Size = new System.Drawing.Size(63, 17);
+            this.RB_2.TabIndex = 5;
+            this.RB_2.Text = "P(X < a)";
+            this.RB_2.UseVisualStyleBackColor = true;
+            this.RB_2.CheckedChanged += new System.EventHandler(this.RB_2_CheckedChanged);
             // 
             // BTN_Calculer
             // 
@@ -198,6 +198,7 @@
             this.BTN_Effacer.TabIndex = 13;
             this.BTN_Effacer.Text = "Effacer";
             this.BTN_Effacer.UseVisualStyleBackColor = true;
+            this.BTN_Effacer.Click += new System.EventHandler(this.BTN_Effacer_Click);
             // 
             // BTN_Aide
             // 
@@ -208,7 +209,6 @@
             this.BTN_Aide.Text = "Aide";
             this.BTN_Aide.UseVisualStyleBackColor = true;
             this.BTN_Aide.Click += new System.EventHandler(this.BTN_Aide_Click);
-            // 
             // 
             // Form1
             // 

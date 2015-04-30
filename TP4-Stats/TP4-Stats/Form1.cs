@@ -213,5 +213,14 @@ namespace TP4_Stats
                 return 0;
             }
         }
+
+        private void BTN_Effacer_Click(object sender, EventArgs e)
+        {
+            TB_a.Text = "";
+            TB_b.Text = "";
+            TB_EcartType.Text = "";
+            TB_Moyenne.Text = "";
+            TB_Resultat.Text = "";
+        }
     }
 }

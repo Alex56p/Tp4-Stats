@@ -12,3 +12,12 @@ F:\Alexis\Mes Documents\TP4-Stats\TP4-Stats\bin\Debug\TP4-Stats.exe.config
 F:\Alexis\Mes Documents\TP4-Stats\TP4-Stats\obj\Debug\TP4-Stats.csproj.ResolveComReference.cache
 F:\Alexis\Mes Documents\TP4-Stats\TP4-Stats\obj\Debug\TP4-Stats.exe
 F:\Alexis\Mes Documents\TP4-Stats\TP4-Stats\obj\Debug\TP4-Stats.pdb
+C:\Users\Antho\Desktop\Tp4-Stats\TP4-Stats\TP4-Stats\bin\Debug\TP4-Stats.exe.config
+C:\Users\Antho\Desktop\Tp4-Stats\TP4-Stats\TP4-Stats\obj\Debug\TP4-Stats.csproj.ResolveComReference.cache
+C:\Users\Antho\Desktop\Tp4-Stats\TP4-Stats\TP4-Stats\obj\Debug\TP4-Stats.exe
+C:\Users\Antho\Desktop\Tp4-Stats\TP4-Stats\TP4-Stats\obj\Debug\TP4-Stats.pdb
+C:\Users\Antho\Desktop\Tp4-Stats\TP4-Stats\TP4-Stats\obj\Debug\TP4-Stats.csprojResolveAssemblyReference.cache
+C:\Users\Antho\Desktop\Tp4-Stats\TP4-Stats\TP4-Stats\obj\Debug\TP4_Stats.Aide.resources
+C:\Users\Antho\Desktop\Tp4-Stats\TP4-Stats\TP4-Stats\obj\Debug\TP4_Stats.Form1.resources
+C:\Users\Antho\Desktop\Tp4-Stats\TP4-Stats\TP4-Stats\obj\Debug\TP4_Stats.Properties.Resources.resources
+C:\Users\Antho\Desktop\Tp4-Stats\TP4-Stats\TP4-Stats\obj\Debug\TP4-Stats.csproj.GenerateResource.Cache
