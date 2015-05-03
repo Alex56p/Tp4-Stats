@@ -130,10 +130,23 @@ namespace TP4_Stats
 
             double Resultat = GetFromExcel(Vertical, Horizontal);
 
-            if (a < 0)
-                Resultat = 50 - Resultat;
+            if(Resultat != 0)
+            {
+                if (a < 0)
+                    Resultat = 50 - Resultat;
+                else
+                    Resultat += 50;
+            }
             else
-                Resultat += 50;
+            {
+                if (a < 0)
+                    Resultat = 0;
+                else
+                    Resultat = 100;
+            }
+
+
+            
 
             TB_Resultat.Text = Resultat.ToString() + "%";
         }
@@ -156,10 +169,23 @@ namespace TP4_Stats
 
             double Resultat = GetFromExcel(Vertical, Horizontal);
 
-            if (a < 0)
-                Resultat += 50;
+
+            if (Resultat != 0)
+            {
+                if (a < 0)
+                    Resultat += 50;
+                else
+                    Resultat = 50 - Resultat;
+            }
             else
-                Resultat = 50 - Resultat;
+            {
+                if (a < 0)
+                    Resultat = 0;
+                else
+                    Resultat = 100;
+            }
+
+            
 
             TB_Resultat.Text = Resultat.ToString() + "%";
         }
