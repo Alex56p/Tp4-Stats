@@ -54,7 +54,7 @@
             this.TB_Moyenne.Name = "TB_Moyenne";
             this.TB_Moyenne.Size = new System.Drawing.Size(100, 20);
             this.TB_Moyenne.TabIndex = 0;
-            this.TB_Moyenne.Text = "2,25";
+            this.TB_Moyenne.Text = "60";
             // 
             // TB_EcartType
             // 
@@ -62,7 +62,7 @@
             this.TB_EcartType.Name = "TB_EcartType";
             this.TB_EcartType.Size = new System.Drawing.Size(100, 20);
             this.TB_EcartType.TabIndex = 1;
-            this.TB_EcartType.Text = "5,14";
+            this.TB_EcartType.Text = "9";
             // 
             // label1
             // 
@@ -144,8 +144,8 @@
             this.TB_a.Location = new System.Drawing.Point(83, 65);
             this.TB_a.Name = "TB_a";
             this.TB_a.Size = new System.Drawing.Size(100, 20);
-            this.TB_a.TabIndex = 7;
-            this.TB_a.Text = "4,12";
+            this.TB_a.TabIndex = 2;
+            this.TB_a.Text = "40";
             // 
             // label3
             // 
@@ -161,8 +161,8 @@
             this.TB_b.Location = new System.Drawing.Point(83, 91);
             this.TB_b.Name = "TB_b";
             this.TB_b.Size = new System.Drawing.Size(100, 20);
-            this.TB_b.TabIndex = 9;
-            this.TB_b.Text = "5,12";
+            this.TB_b.TabIndex = 3;
+            this.TB_b.Text = "65";
             // 
             // label4
             // 

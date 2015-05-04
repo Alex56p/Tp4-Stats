@@ -23,21 +23,25 @@ namespace TP4_Stats
         {
             if (TB_EcartType.Text != "" && TB_Moyenne.Text != "" && TB_a.Text != "")
             {
-                if (RB_1.Checked && TB_b.Text != "")
-                {
-                    if (double.Parse(TB_a.Text) < double.Parse(TB_b.Text))
-                        CalculerProb1(double.Parse(TB_a.Text), double.Parse(TB_b.Text));
+                if (double.Parse(TB_EcartType.Text) > 0)
+                    if (RB_1.Checked && TB_b.Text != "")
+                    {
+                        if (double.Parse(TB_a.Text) < double.Parse(TB_b.Text))
+                            CalculerProb1(double.Parse(TB_a.Text), double.Parse(TB_b.Text));
+                        else
+                            MessageBox.Show("Erreur, le 'a' doit être plus petit que le 'b'");
+                    }
+                    else if (RB_2.Checked)
+                    {
+                        CalculerProb2(double.Parse(TB_a.Text));
+                    }
+                    else if (RB_3.Checked)
+                    {
+                        CalculerProb3(double.Parse(TB_a.Text));
+                    }
                     else
-                        MessageBox.Show("Erreur, le 'a' doit être plus petit que le 'b'");
-                }
-                else if (RB_2.Checked)
-                {
-                    CalculerProb2(double.Parse(TB_a.Text));
-                }
-                else if (RB_3.Checked)
-                {
-                    CalculerProb3(double.Parse(TB_a.Text));
-                }
+                        MessageBox.Show("Erreur, l'écart type doit être positif");
+
             }
             else
             {
@@ -107,9 +111,11 @@ namespace TP4_Stats
             double Resultat2 = GetFromExcel(VerticalB, HorizontalB);
 
             if (CoteZA < 0)
-                Resultat1 = 100 - Resultat1;
-            if (CoteZB < 0)
-                Resultat2 = 100 - Resultat2;
+                if (Resultat1 != 0)
+                    Resultat1 = 100 - Resultat1;
+            if (CoteZB > 4)
+                if(Resultat2 == 0 && CoteZA < 4)
+                    Resultat2 = 100;
 
             double ResultatFinal;
             if (Resultat1 > Resultat2)
@@ -117,6 +123,7 @@ namespace TP4_Stats
             else
                 ResultatFinal = Resultat2 - Resultat1;
 
+            ResultatFinal = Math.Round(ResultatFinal, 2);
             TB_Resultat.Text = ResultatFinal.ToString() + "%";
         }
 
@@ -140,23 +147,15 @@ namespace TP4_Stats
 
             double Resultat = GetFromExcel(Vertical, Horizontal);
 
-            if (CoteZ < 0)
-                Resultat = 100 - Resultat;
-            if(Resultat != 0)
-            {
-                if (a < 0)
-                    Resultat = 50 - Resultat;
-                else
-                    Resultat += 50;
-            }
-            else
-            {
-                if (a < 0)
-                    Resultat = 0;
-                else
-                    Resultat = 100;
-            }
+            if (CoteZ > 4)
+                Resultat = 100;
 
+            if (Resultat != 0 && CoteZ < 0)
+                Resultat = 100 - Resultat;
+            
+            
+
+            Resultat = Math.Round(Resultat, 2);
             TB_Resultat.Text = Resultat.ToString() + "%";
         }
 
@@ -180,24 +179,16 @@ namespace TP4_Stats
             Vertical = Math.Abs(Vertical);
 
             double Resultat = GetFromExcel(Vertical, Horizontal);
-            if (CoteZ < 0)
-                Resultat = 100 - Resultat;
-            if (Resultat != 0)
-            {
-                if (a < 0)
-                    Resultat += 50;
-                else
-                    Resultat = 50 - Resultat;
-            }
-            else
-            {
-                if (a < 0)
-                    Resultat = 0;
-                else
-                    Resultat = 100;
-            }
 
-            
+            if (CoteZ > 4)
+                Resultat = 100;
+
+            if (Resultat != 0 && CoteZ < 0)
+                Resultat = 100 - Resultat;
+
+            Resultat = 100 - Resultat;
+
+            Resultat = Math.Round(Resultat, 2);
 
             TB_Resultat.Text = Resultat.ToString() + "%";
         }
