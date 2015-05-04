@@ -75,8 +75,8 @@ namespace TP4_Stats
         private void CalculerProb1(double a, double b)
         {
             // Calculer la CoteZ
-            double CoteZA = Math.Abs(CalculerCoteZ(a));
-            double CoteZB = Math.Abs(CalculerCoteZ(b));
+            double CoteZA = CalculerCoteZ(a);
+            double CoteZB = CalculerCoteZ(b);
 
             // Prendre la Dernière décimale de la CoteZA
             double HorizontalA = (CoteZA - Math.Truncate(CoteZA)) * 10;
@@ -84,10 +84,11 @@ namespace TP4_Stats
             HorizontalA = (HorizontalA - Math.Truncate(HorizontalA)) * 10;
             HorizontalA = Math.Round(HorizontalA, 2);
             HorizontalA = Math.Truncate(HorizontalA);
-
+            HorizontalA = Math.Abs(HorizontalA);
             // Prendre les 2 premières décimales de la CoteZA
             double VerticalA = CoteZA * 10;
             VerticalA = Math.Truncate(VerticalA);
+            VerticalA = Math.Abs(VerticalA);
 
             // Prendre la Dernière décimale de la CoteZB
             double HorizontalB = (CoteZB - Math.Truncate(CoteZB)) * 10;
@@ -95,13 +96,20 @@ namespace TP4_Stats
             HorizontalB = (HorizontalB - Math.Truncate(HorizontalB)) * 10;
             HorizontalB = Math.Round(HorizontalB, 2);
             HorizontalB = Math.Truncate(HorizontalB);
+            HorizontalB = Math.Abs(HorizontalB);
 
             // Prendre les 2 premières décimales de la CoteZB
             double VerticalB = CoteZB * 10;
             VerticalB = Math.Truncate(VerticalB);
+            VerticalB = Math.Abs(VerticalB);
 
             double Resultat1 = GetFromExcel(VerticalA, HorizontalA);
             double Resultat2 = GetFromExcel(VerticalB, HorizontalB);
+
+            if (CoteZA < 0)
+                Resultat1 = 100 - Resultat1;
+            if (CoteZB < 0)
+                Resultat2 = 100 - Resultat2;
 
             double ResultatFinal;
             if (Resultat1 > Resultat2)
@@ -115,7 +123,7 @@ namespace TP4_Stats
         private void CalculerProb2(double a)
         {
             // Calculer la CoteZ
-            double CoteZ = Math.Abs(CalculerCoteZ(a));
+            double CoteZ = CalculerCoteZ(a);
 
             // Prendre la Dernière décimale de la CoteZA
             double Horizontal = (CoteZ - Math.Truncate(CoteZ)) * 10;
@@ -123,13 +131,17 @@ namespace TP4_Stats
             Horizontal = (Horizontal - Math.Truncate(Horizontal)) * 10;
             Horizontal = Math.Round(Horizontal, 2);
             Horizontal = Math.Truncate(Horizontal);
+            Horizontal = Math.Abs(Horizontal);
 
             // Prendre les 2 premières décimales de la CoteZA
             double Vertical = CoteZ * 10;
             Vertical = Math.Truncate(Vertical);
+            Vertical = Math.Abs(Vertical);
 
             double Resultat = GetFromExcel(Vertical, Horizontal);
 
+            if (CoteZ < 0)
+                Resultat = 100 - Resultat;
             if(Resultat != 0)
             {
                 if (a < 0)
@@ -145,16 +157,13 @@ namespace TP4_Stats
                     Resultat = 100;
             }
 
-
-            
-
             TB_Resultat.Text = Resultat.ToString() + "%";
         }
 
         private void CalculerProb3(double a)
         {
             // Calculer La CoteZ
-            double CoteZ = Math.Abs(CalculerCoteZ(a));
+            double CoteZ = CalculerCoteZ(a);
 
             // Prendre la Dernière décimale de la CoteZA
             double Horizontal = (CoteZ - Math.Truncate(CoteZ)) * 10;
@@ -162,14 +171,17 @@ namespace TP4_Stats
             Horizontal = (Horizontal - Math.Truncate(Horizontal)) * 10;
             Horizontal = Math.Round(Horizontal, 2);
             Horizontal = Math.Truncate(Horizontal);
+            Horizontal = Math.Abs(Horizontal);
 
             // Prendre les 2 premières décimales de la CoteZA
             double Vertical = CoteZ * 10;
             Vertical = Math.Truncate(Vertical);
+            Vertical = Math.Round(Vertical);
+            Vertical = Math.Abs(Vertical);
 
             double Resultat = GetFromExcel(Vertical, Horizontal);
-
-
+            if (CoteZ < 0)
+                Resultat = 100 - Resultat;
             if (Resultat != 0)
             {
                 if (a < 0)
